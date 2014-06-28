@@ -1,2 +1,5 @@
 # Library files
 node_modules
+
+# Sourcemap
+*.map
