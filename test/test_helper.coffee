@@ -1,3 +1,4 @@
 global.assert = require('chai').assert
-global.locate = require '../src/main'
-global.resourcePath = require('path').resolve __dirname, 'resources'
+{PriorityQueue, Heap} = require '../src/main'
+global.PriorityQueue = PriorityQueue
+global.Heap = Heap

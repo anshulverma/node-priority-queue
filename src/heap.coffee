@@ -1,4 +1,4 @@
-{arg} = require 'preconditions'
+{arg} = require './preconditions'
 
 DEFAULT_COMPARATOR = (value1, value2) ->
   arg value1? and value2?, 'undefined values not allowed'
@@ -13,7 +13,7 @@ DEFAULT_COMPARATOR = (value1, value2) ->
 
 class Heap
   constructor: (@comparator = DEFAULT_COMPARATOR, arr = []) ->
-    @heap = heapify arr
+    @heap = heapify arr, @comparator
 
   peek: ->
 
@@ -24,8 +24,10 @@ class Heap
   merge: ->
 
   size: ->
+    @heap.length
 
   isEmpty: ->
+    @heap.length == 0
 
   heapify = (arr, comparator) ->
     heap = []
@@ -38,8 +40,6 @@ class Heap
     heapUp heap, index
 
   heapUp = (heap, index) ->
-    {parentIndex, parentValue} = getParent heap, index
-    value = heap[index]
     index = swapWithParent heap, index until isHeapOrder heap, index, comparator
     index
 
@@ -64,3 +64,5 @@ class Heap
     value1 = heap[index1]
     heap[index1] = heap[index2]
     heap[index2] = value1
+
+module.exports.Heap = Heap
