@@ -22,5 +22,5 @@ describe 'heap test', ->
 
     it 'insert a number', ->
       heap = new Heap
-      assert.equal heap.insert 5, 0,
+      assert.equal heap.insert(5), 0,
         'the first element should be inserted at index 0'
