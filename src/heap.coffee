@@ -1,8 +1,8 @@
-{arg} = require './preconditions'
+{checkArgument} = require 'node-preconditions'
 
 DEFAULT_COMPARATOR = (value1, value2) ->
-  arg value1? and value2?, 'undefined values not allowed'
-  arg typeof value1 is typeof value2, 'cannot compare different types'
+  checkArgument value1? and value2?, 'undefined values not allowed'
+  checkArgument typeof value1 is typeof value2, 'cannot compare different types'
 
   valueType = typeof value1
   return switch valueType
