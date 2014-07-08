@@ -17,7 +17,7 @@ describe 'heap test', ->
   describe 'insertion tests', ->
     it 'heap should not allow undefined values', ->
       assert.ok @heap.isEmpty, 'heap should be empty when nothing is inserted'
-      wrapper = -> insertionIndex = @heap.insert null
+      wrapper = => insertionIndex = @heap.insert null
       assert.throws wrapper, 'cannot insert undefined values'
 
     describe 'insertion tests with numbers', ->
