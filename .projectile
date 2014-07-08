@@ -3,3 +3,6 @@
 
 # Sourcemap
 -*.map
+
+# Node modules
+node_modules/
