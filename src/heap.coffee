@@ -16,6 +16,7 @@ class Heap
     @heap = heapify arr, @comparator
 
   peek: ->
+    @heap[0]
 
   extractRoot: ->
 
