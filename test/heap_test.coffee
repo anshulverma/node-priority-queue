@@ -12,3 +12,15 @@ describe 'HeapTest', ->
     it '#methodsThatFailOnEmptyHeap', ->
       heap = new Heap
       assert.isUndefined heap.peek(), "can't peek into empty heap"
+
+  describe '#insertion', ->
+    it '#undefined', ->
+      heap = new Heap
+      assert.ok heap.isEmpty, 'heap should be empty when nothing is inserted'
+      wrapper = -> insertionIndex = heap.insert null
+      assert.throws wrapper, 'cannot insert undefined values'
+
+    it '#number', ->
+      heap = new Heap
+      assert.equal heap.insert 5, 0,
+        'the first element should be inserted at index 0'

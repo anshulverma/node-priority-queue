@@ -20,7 +20,8 @@ class Heap
 
   extractRoot: ->
 
-  insert: ->
+  insert: (value) ->
+    insert @heap, value, @comparator
 
   merge: ->
 
@@ -36,11 +37,12 @@ class Heap
     heap
 
   insert = (heap, value, comparator) ->
+    checkArgument value, 'cannot insert undefined values'
     heap.push value
     index = heap.length - 1
-    heapUp heap, index
+    heapUp heap, index, comparator
 
-  heapUp = (heap, index) ->
+  heapUp = (heap, index, comparator) ->
     index = swapWithParent heap, index until isHeapOrder heap, index, comparator
     index
 
