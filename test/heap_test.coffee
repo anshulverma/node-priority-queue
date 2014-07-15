@@ -24,3 +24,7 @@ describe 'heap test', ->
       it 'insert first element', ->
         assert.equal @heap.insert(5), 0,
           'the first element should be inserted at index 0'
+        assert.notOk do @heap.isEmpty,
+          'heap should not be empty after a element is inserted'
+        assert.equal do @heap.size, 1, 'heap should have one element'
+        assert.equal do @heap.peek, 5, 'peeking into the heap should return 5'

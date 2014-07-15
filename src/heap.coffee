@@ -12,11 +12,13 @@ DEFAULT_COMPARATOR = (value1, value2) ->
     else throw new Error "cannot compare value of type #{valueType}"
 
 class Heap
+  @ROOT_INDEX = 0
+
   constructor: (@comparator = DEFAULT_COMPARATOR, arr = []) ->
     @heap = heapify arr, @comparator
 
   peek: ->
-    @heap[0]
+    @heap[Heap.ROOT_INDEX]
 
   extractRoot: ->
 
