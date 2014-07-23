@@ -59,10 +59,11 @@ class Heap
     comparator(parentValue, heap[index]) > 0
 
   getParent = (heap, index) ->
-    arg index > 0, 'root has no parent'
+    checkArgument index > 0, 'root has no parent'
+    parentIndex = Math.floor (index - 1) / 2
     {
-      parentIndex: index / 2
-      parentValue: heap[parentIndex / 2]
+      parentIndex: parentIndex
+      parentValue: heap[parentIndex]
     }
 
   swap = (heap, index1, index2) ->
