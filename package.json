@@ -10,29 +10,37 @@
     "Anshul Verma <anshul.verma86@gmail.com>"
   ],
   "scripts": {
-    "test": "cake test"
+    "test": "grunt test",
+    "prepublish": "grunt coffee"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/anshulverma/node-priority-queue"
   },
   "dependencies": {
-    "coffee-script": "1.7.1",
     "node-preconditions": "0.0.4"
   },
   "devDependencies": {
-    "chai": "1.9.1",
-    "mocha": "1.20.1",
-    "docco": "0.6.3"
+    "chai": "^1.9.1",
+    "coffee-script": "1.7.1",
+    "coveralls": "^2.11.1",
+    "docco": "0.6.3",
+    "grunt": "^0.4.5",
+    "grunt-blanket": "0.0.8",
+    "grunt-coffeelint": "0.0.10",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-docco": "^0.3.3",
+    "grunt-mocha-istanbul": "^1.5.0",
+    "grunt-mocha-test": "^0.11.0",
+    "mocha": "1.20.1"
   },
   "bundledDependencies": [],
   "keywords": [
-    "cli",
     "priority-queue",
     "collections",
     "data-structure",
     "coffee-script",
-    "cake"
+    "grunt"
   ],
   "engines": {
     "node": ">= 0.10.0",
@@ -40,6 +48,6 @@
   },
   "directories": {
     "doc": "./doc",
-    "lib": "./lib"
+    "src": "./src"
   }
 }

@@ -1,8 +1,12 @@
+# Log files
+-*.log
+
+# Library files
+-node_modules/
+
 # Temporary files
 -*~
+-*#*
 
 # Sourcemap
 -*.map
-
-# Node modules
-node_modules/
