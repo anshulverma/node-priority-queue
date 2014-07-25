@@ -18,7 +18,7 @@
     "url": "https://github.com/anshulverma/node-priority-queue"
   },
   "dependencies": {
-    "node-preconditions": "0.0.4"
+    "node-preconditions": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
